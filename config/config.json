@@ -1,15 +1,15 @@
 {
-    "provider": "openai",
-    "openai":{
-        "model": "gpt-4o-mini",
-        "temperature": 0.7,
+    "provider": "gemini",
+    "ollama":{
+        "model": "qwen2.5-coder:3b",
+        "temperature": 0.2,
         "top_p": 0.9,
-        "max_tokens": 200
+        "num_predict": 200
     },
     "gemini":{
-        "model": "gemini-2.5-flash",
-        "temperature": 0.6,
-        "top_p": 0.8,
-        "max_tokens": 300
+        "model": "gemini-3.8-flash",
+        "temperature": 0.2,
+        "top_p": 0.9,
+        "max_output_tokens": 512
     }
 }
