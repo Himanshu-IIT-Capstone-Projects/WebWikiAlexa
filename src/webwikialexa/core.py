@@ -2,7 +2,7 @@ import os
 import json
 from dotenv import load_dotenv
 import ollama
-import google.generativeai as genai
+from google import genai
 
 load_dotenv()
 
@@ -14,16 +14,15 @@ with open("./config/config.json", "r") as f:
 def run_gemini(prompt: str) -> str:
     try:
         api_key=os.getenv("GEMINI_API_KEY")        
-        genai.configure(api_key=api_key)
-        #print(f"\n Key Value: {api_key}")
-        
+        client = genai.Client(api_key=api_key)
+
         model_name = SYS_CONFIG["gemini"]["model"]
-        model = genai.GenerativeModel(model_name) 
         print(f"\n Model Name: {model_name}")
 
-        response = model.generate_content(
-            prompt,
-            generation_config={
+        response = client.models.generate_content(
+            model=model_name,
+            contents=prompt,
+            config={
                 "temperature": SYS_CONFIG["gemini"].get("temperature"),
                 "top_p": SYS_CONFIG["gemini"].get("top_p"),
                 "max_output_tokens": SYS_CONFIG["gemini"].get("max_output_tokens")

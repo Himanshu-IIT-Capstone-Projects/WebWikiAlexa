@@ -134,7 +134,7 @@ This module builds the main Streamlit chat page. Its top-level code configures t
 
 | Function | Purpose |
 |---|---|
-| `run_gemini(prompt: str) -> str` | Creates a Gemini client using the selected model and generation settings, sends it the supplied prompt, and returns the generated text. It returns a readable error string if the call fails. |
+| `run_gemini(prompt: str) -> str` | Creates a Gemini client with the `google-genai` SDK using the selected model and generation settings, sends it the supplied prompt, and returns the generated text. It returns a readable error string if the call fails. |
 | `run_ollama(history: str) -> str` | Creates Ollama generation options, sends the conversation to the configured local model, and returns the generated message text. It returns a readable error string if the call fails. |
 | `run_llm(history)` | Reads the selected provider from `config/config.json` and routes the conversation to `run_ollama` or `run_gemini`. For Gemini, it converts role/content messages into a single text prompt. |
 
@@ -190,3 +190,12 @@ REM Opens the local app on port 8921 instead of Streamlit's default port.
 
 **To change the default provider or model settings, edit the corresponding values in `config/config.json`.** 
 
+# Screenshot:
+<div>
+  <img src="./images/output.png"  style="width:80%;" alt="output-Image"/>
+</div>
+
+# Running Video:
+<div>
+  <img src="./images/outputVid.gif"  style="width:80%;" alt="output-Image" />
+<div>

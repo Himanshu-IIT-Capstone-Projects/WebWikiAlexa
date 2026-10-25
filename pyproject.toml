@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "streamlit",
     "python-dotenv",
-    "google-generativeai",
+    "google-genai",
     "ollama",
     "langchain",
     "langchain-google-genai",
