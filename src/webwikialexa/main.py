@@ -6,9 +6,10 @@ import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-st.set_page_config(page_title="Assistant for Jim corbett", page_icon="🤖")
-st.title("🤖 Assistant for Jim corbett")
-st.caption("ℹ️ *This assistant handles inquiries focused strictly on JIM CORBETT PARK Hotels/ Suites availability*")
+st.set_page_config(page_title="Assistant ChatBot", page_icon="🤖")
+st.title("🤖 Assistant ChatBot")
+#st.caption("ℹ️ *This assistant handles inquiries focused strictly on JIM CORBETT PARK Hotels/ Suites availability*")
+st.caption("ℹ️ *This assistant handles chit chat for any topic*")
 st.divider()
 
 initialPrompt = [
@@ -46,8 +47,9 @@ if prompt:= st.chat_input("Type your message here..."):
     
     # to add markdonw
     st.chat_message("user").markdown(prompt)
-
-    reply = run_llm(st.session_state["history"])
+    
+    with st.spinner("Searching response..."):   
+        reply = run_llm(st.session_state["history"])
 
     # add Assitant response also to memory
     template = { "role": "assitant", "content": reply }

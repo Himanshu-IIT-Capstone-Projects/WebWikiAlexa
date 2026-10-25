@@ -1,15 +1,21 @@
 {
-    "provider": "gemini",
-    "ollama":{
-        "model": "qwen2.5-coder:3b",
-        "temperature": 0.2,
-        "top_p": 0.9,
-        "num_predict": 200
-    },
-    "gemini":{
-        "model": "gemini-3.8-flash",
-        "temperature": 0.2,
-        "top_p": 0.9,
-        "max_output_tokens": 512
-    }
+  "provider": "gemini",
+  "ollama": {
+    "model": "qwen2.5-coder:3b",
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "num_predict": 200
+  },
+  "gemini": {
+    "model": "gemini-3.8-flash",
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_output_tokens": 512
+  },
+  "openai": {
+    "model": "gpt-6-astra",
+    "temperature": 0.4,
+    "top_p": 0.9,
+    "max_output_tokens": 512
+  }
 }
